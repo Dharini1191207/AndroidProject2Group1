@@ -29,5 +29,10 @@ class ExampleUnitTest {
     fun email_null_isIncorrect(){
         assertFalse(EmailValidator.isValidEmail(null))
     }
+
+    @Test
+    fun email_subdomain_isCorrect(){
+        assertTrue(EmailValidator.isValidEmail("123@abc.co.ca"))
+    }
     
 }
