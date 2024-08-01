@@ -19,4 +19,15 @@ class ExampleUnitTest {
     fun email_Dots_isIncorrect(){
         assertFalse(EmailValidator.isValidEmail("123@abc..com"))
     }
+
+    @Test
+    fun email_empty_isIncorrect(){
+        assertFalse(EmailValidator.isValidEmail(""))
+    }
+
+    @Test
+    fun email_null_isIncorrect(){
+        assertFalse(EmailValidator.isValidEmail(null))
+    }
+    
 }
