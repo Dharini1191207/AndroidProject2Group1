@@ -45,5 +45,12 @@ class ChangeTextBehaviorKtTest {
         onView(withId(R.id.activityChangeTextBtn)).perform(ViewActions.click())
         onView(withId(R.id.show_text_view)).check(matches(withText("abcdef")))
     }
+
+    @Test
+    fun changeText_sameActivity_withEmptyInput() {
+        onView(withId(R.id.editTextUserInput)).perform(ViewActions.clearText())
+        onView(withId(R.id.changeTextBt)).perform(ViewActions.click())
+        onView(withId(R.id.textToBeChanged)).check(matches(withText("")))
+    }
 }
 
