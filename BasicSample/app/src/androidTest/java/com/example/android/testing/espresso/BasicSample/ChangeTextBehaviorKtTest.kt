@@ -38,4 +38,12 @@ class ChangeTextBehaviorKtTest {
         onView(withId(R.id.activityChangeTextBtn)).perform(ViewActions.click())
         onView(withId(R.id.show_text_view)).check(matches(withText("123")))
     }
+
+    @Test
+    fun changeText_openNewActivity_withInputabcdef() {
+        onView(withId(R.id.editTextUserInput)).perform(ViewActions.typeText("abcdef"), ViewActions.closeSoftKeyboard())
+        onView(withId(R.id.activityChangeTextBtn)).perform(ViewActions.click())
+        onView(withId(R.id.show_text_view)).check(matches(withText("abcdef")))
+    }
 }
+
