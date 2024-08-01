@@ -26,42 +26,42 @@ class ChangeTextBehaviorKtTest {
     var activityScenarioRule = activityScenarioRule<MainActivity>()
 
     @Test
-    fun changeText_sameActivity_withInput123() {
+    fun changeTextTestStringWithInput123() {
         onView(withId(R.id.editTextUserInput)).perform(ViewActions.typeText("123"), ViewActions.closeSoftKeyboard())
         onView(withId(R.id.changeTextBt)).perform(ViewActions.click())
         onView(withId(R.id.textToBeChanged)).check(matches(withText("123")))
     }
 
     @Test
-    fun changeText_openNewActivity_withInput123() {
+    fun changeTextOpenNewActivityTestStringWithInput123() {
         onView(withId(R.id.editTextUserInput)).perform(ViewActions.typeText("123"), ViewActions.closeSoftKeyboard())
         onView(withId(R.id.activityChangeTextBtn)).perform(ViewActions.click())
         onView(withId(R.id.show_text_view)).check(matches(withText("123")))
     }
 
     @Test
-    fun changeText_openNewActivity_withInputabcdef() {
+    fun changeTextOpenNewActivityTestStringWithInputabcdef() {
         onView(withId(R.id.editTextUserInput)).perform(ViewActions.typeText("abcdef"), ViewActions.closeSoftKeyboard())
         onView(withId(R.id.activityChangeTextBtn)).perform(ViewActions.click())
         onView(withId(R.id.show_text_view)).check(matches(withText("abcdef")))
     }
 
     @Test
-    fun changeText_sameActivity_withEmptyInput() {
+    fun changeTextTestStringWithEmptyInput() {
         onView(withId(R.id.editTextUserInput)).perform(ViewActions.clearText())
         onView(withId(R.id.changeTextBt)).perform(ViewActions.click())
         onView(withId(R.id.textToBeChanged)).check(matches(withText("")))
     }
 
     @Test
-    fun changeText_openNewActivity_withEmptyInput() {
+    fun changeTextOpenNewActivityWithEmptyInput() {
         onView(withId(R.id.editTextUserInput)).perform(ViewActions.clearText())
         onView(withId(R.id.activityChangeTextBtn)).perform(ViewActions.click())
         onView(withId(R.id.show_text_view)).check(matches(withText("")))
     }
 
     @Test
-    fun changeText_sameActivity_withInputabcdef() {
+    fun changeTextTestStringWithInputAbcdef() {
         onView(withId(R.id.editTextUserInput)).perform(ViewActions.typeText("abcdef"), ViewActions.closeSoftKeyboard())
         onView(withId(R.id.changeTextBt)).perform(ViewActions.click())
         onView(withId(R.id.textToBeChanged)).check(matches(withText("abcdef")))
